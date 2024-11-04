@@ -2,12 +2,27 @@ import { messages } from "@/data/messages";
 import ChatContainer from "@/components/ChatContainer";
 import { Button } from "@/components/ui/button";
 import { RefreshCw, ChevronDown, SkipForward } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Index = () => {
   const [key, setKey] = useState(0);
   const [immediate, setImmediate] = useState(false);
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [language, setLanguage] = useState("en");
+
+  const [importedMessages, setImportedMessages] = useState(null);
+
+  // Load Portuguese messages if needed
+  useEffect(() => {
+    if (language === "pt") {
+      import("@/data/messages_pt.json").then((module) => {
+        setImportedMessages(module.default);
+      });
+    }
+  }, [language]);
+
+  const currentMessages =
+    language === "en" ? messages : importedMessages || messages;
 
   const handleReset = () => {
     setKey((prev) => prev + 1);
@@ -42,6 +57,13 @@ const Index = () => {
           <div className="flex gap-2">
             <Button
               variant="ghost"
+              onClick={() => setLanguage(language === "en" ? "pt" : "en")}
+              className="text-white hover:text-blue-700/80"
+            >
+              {language === "en" ? "PT" : "EN"}
+            </Button>
+            <Button
+              variant="ghost"
               size="icon"
               onClick={handleAdvance}
               className="text-white hover:text-blue-700/80"
@@ -64,7 +86,7 @@ const Index = () => {
         >
           <ChatContainer
             key={key}
-            messages={messages}
+            messages={currentMessages}
             immediate={immediate}
             reset={handleReset}
           />
