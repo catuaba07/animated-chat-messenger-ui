@@ -22,6 +22,11 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
     });
   };
 
+  const isBot = message.sender.includes("(Bot)");
+  const avatarUrl = isBot 
+    ? "https://st5.depositphotos.com/72897924/62255/v/450/depositphotos_622556394-stock-illustration-robot-web-icon-vector-illustration.jpg"
+    : `https://i.pravatar.cc/300?u=${message.sender}`;
+
   return (
     <div
       className={cn(
@@ -32,7 +37,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
       <div className="flex-shrink-0 w-8">
         {showSender && (
           <Avatar className="w-8 h-8">
-            <AvatarImage src={`https://i.pravatar.cc/300?u=${message.sender}`} />
+            <AvatarImage src={avatarUrl} />
             <AvatarFallback>{message.sender[0]}</AvatarFallback>
           </Avatar>
         )}
