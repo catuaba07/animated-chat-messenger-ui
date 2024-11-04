@@ -25,30 +25,32 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
   return (
     <div
       className={cn(
-        "animate-message-in opacity-0 group flex gap-2",
+        "animate-message-in opacity-0 group flex gap-3 px-4",
         message.isSentByMe ? "flex-row-reverse" : "flex-row"
       )}
     >
-      {showSender && (
-        <Avatar className="w-8 h-8">
-          <AvatarImage src={`https://i.pravatar.cc/300?u=${message.sender}`} />
-          <AvatarFallback>{message.sender[0]}</AvatarFallback>
-        </Avatar>
-      )}
-      <div className="flex flex-col">
+      <div className="flex-shrink-0 w-8">
+        {showSender && (
+          <Avatar className="w-8 h-8">
+            <AvatarImage src={`https://i.pravatar.cc/300?u=${message.sender}`} />
+            <AvatarFallback>{message.sender[0]}</AvatarFallback>
+          </Avatar>
+        )}
+      </div>
+      <div className={cn("flex flex-col max-w-[70%]", message.isSentByMe && "items-end")}>
         {showSender && !message.isSentByMe && (
-          <span className="text-xs text-gray-400 ml-3 mb-1">{message.sender}</span>
+          <span className="text-xs text-gray-400 mb-1">{message.sender}</span>
         )}
         <div
           className={cn(
-            "rounded-lg px-4 py-2 max-w-[80%] break-words",
+            "rounded-lg px-4 py-2 break-words w-fit",
             message.isSentByMe
               ? "bg-chat-bubble-sent text-white"
               : "bg-chat-bubble-received text-gray-100"
           )}
         >
           <p className="text-sm">{highlightMentions(message.text)}</p>
-          <span className="text-[10px] text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity float-right ml-2 mt-1">
+          <span className="text-[10px] text-gray-300 block text-right mt-1">
             {message.timestamp}
           </span>
         </div>
