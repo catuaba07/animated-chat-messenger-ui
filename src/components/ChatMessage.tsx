@@ -1,6 +1,7 @@
 import React from "react";
 import { Message } from "@/data/messages";
 import { cn } from "@/lib/utils";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 interface ChatMessageProps {
   message: Message;
@@ -24,25 +25,33 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
   return (
     <div
       className={cn(
-        "animate-message-in opacity-0 group",
-        message.isSentByMe ? "flex flex-col items-end" : "flex flex-col items-start"
+        "animate-message-in opacity-0 group flex gap-2",
+        message.isSentByMe ? "flex-row-reverse" : "flex-row"
       )}
     >
-      {showSender && !message.isSentByMe && (
-        <span className="text-xs text-gray-400 ml-3 mb-1">{message.sender}</span>
+      {showSender && (
+        <Avatar className="w-8 h-8">
+          <AvatarImage src={`https://i.pravatar.cc/300?u=${message.sender}`} />
+          <AvatarFallback>{message.sender[0]}</AvatarFallback>
+        </Avatar>
       )}
-      <div
-        className={cn(
-          "rounded-lg px-4 py-2 max-w-[80%] break-words",
-          message.isSentByMe
-            ? "bg-chat-bubble-sent text-white"
-            : "bg-chat-bubble-received text-gray-100"
+      <div className="flex flex-col">
+        {showSender && !message.isSentByMe && (
+          <span className="text-xs text-gray-400 ml-3 mb-1">{message.sender}</span>
         )}
-      >
-        <p className="text-sm">{highlightMentions(message.text)}</p>
-        <span className="text-[10px] text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity float-right ml-2 mt-1">
-          {message.timestamp}
-        </span>
+        <div
+          className={cn(
+            "rounded-lg px-4 py-2 max-w-[80%] break-words",
+            message.isSentByMe
+              ? "bg-chat-bubble-sent text-white"
+              : "bg-chat-bubble-received text-gray-100"
+          )}
+        >
+          <p className="text-sm">{highlightMentions(message.text)}</p>
+          <span className="text-[10px] text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity float-right ml-2 mt-1">
+            {message.timestamp}
+          </span>
+        </div>
       </div>
     </div>
   );

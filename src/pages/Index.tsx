@@ -1,12 +1,22 @@
 import { messages } from "@/data/messages";
 import ChatContainer from "@/components/ChatContainer";
+import { Button } from "@/components/ui/button";
+import { RefreshCw } from "lucide-react";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-chat-bg">
       <div className="max-w-3xl mx-auto h-screen flex flex-col">
-        <div className="bg-chat-bubble-received/30 p-4">
-          <h1 className="text-white text-xl font-semibold">Chat Interface</h1>
+        <div className="bg-chat-bubble-received/30 p-4 flex justify-between items-center">
+          <h1 className="text-white text-xl font-semibold">Earth Defenders Assistant</h1>
+          <Button 
+            variant="ghost" 
+            size="icon"
+            onClick={() => window.location.reload()}
+            className="text-white hover:text-white/80"
+          >
+            <RefreshCw className="h-5 w-5" />
+          </Button>
         </div>
         <div className="flex-1 overflow-y-auto">
           <ChatContainer messages={messages} />

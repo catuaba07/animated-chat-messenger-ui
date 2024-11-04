@@ -12,19 +12,16 @@ const ChatContainer: React.FC<ChatContainerProps> = ({ messages }) => {
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
+    setVisibleMessages([]); // Reset visible messages when messages prop changes
     const showMessages = async () => {
       for (let i = 0; i < messages.length; i++) {
-        // Show typing indicator
         setIsTyping(true);
-        
-        // Random delay between 0.5 and 3 seconds
         const delay = Math.random() * 2500 + 500;
         await new Promise(resolve => setTimeout(resolve, delay));
         
         setIsTyping(false);
         setVisibleMessages(prev => [...prev, messages[i]]);
         
-        // Small delay before showing typing indicator for next message
         if (i < messages.length - 1) {
           await new Promise(resolve => setTimeout(resolve, 300));
         }
