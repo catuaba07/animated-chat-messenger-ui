@@ -65,10 +65,15 @@ export default {
         "message-in": {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" }
+        },
+        "typing": {
+          "0%, 100%": { opacity: "0.2" },
+          "50%": { opacity: "1" }
         }
       },
       animation: {
-        "message-in": "message-in 0.3s ease-out forwards"
+        "message-in": "message-in 0.3s ease-out forwards",
+        "typing-dot": "typing 1s infinite"
       }
     },
   },
