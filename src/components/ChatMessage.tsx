@@ -13,7 +13,14 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
     return text.split(" ").map((word, index) => {
       if (word.startsWith("@")) {
         return (
-          <span key={index} className="text-chat-mention">
+          <span key={index} className="text-chat-mention cursor-pointer">
+            {word}{" "}
+          </span>
+        );
+      }
+      if (word.match(/(?:\+\d{1,2}-\d{3}-\d{4}|\d{3}-\d{4}|\d{10})/)) {
+        return (
+          <span key={index} className="text-chat-mention cursor-pointer">
             {word}{" "}
           </span>
         );
@@ -23,7 +30,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
   };
 
   const isBot = message.sender.includes("(Bot)");
-  const avatarUrl = isBot 
+  const avatarUrl = isBot
     ? "https://st5.depositphotos.com/72897924/62255/v/450/depositphotos_622556394-stock-illustration-robot-web-icon-vector-illustration.jpg"
     : `https://i.pravatar.cc/300?u=${message.sender}`;
 
@@ -31,7 +38,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
     <div
       className={cn(
         "animate-message-in opacity-0 group flex gap-3 px-4",
-        message.isSentByMe ? "flex-row-reverse" : "flex-row"
+        message.isSentByMe ? "flex-row-reverse" : "flex-row",
       )}
     >
       <div className="flex-shrink-0 w-8">
@@ -42,7 +49,12 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
           </Avatar>
         )}
       </div>
-      <div className={cn("flex flex-col max-w-[70%]", message.isSentByMe && "items-end")}>
+      <div
+        className={cn(
+          "flex flex-col max-w-[70%]",
+          message.isSentByMe && "items-end",
+        )}
+      >
         {showSender && !message.isSentByMe && (
           <span className="text-xs text-gray-400 mb-1">{message.sender}</span>
         )}
@@ -51,7 +63,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
             "rounded-lg px-4 py-2 break-words w-fit",
             message.isSentByMe
               ? "bg-chat-bubble-sent text-white"
-              : "bg-chat-bubble-received text-gray-100"
+              : "bg-chat-bubble-received text-gray-100",
           )}
         >
           <p className="text-sm whitespace-pre-line">
