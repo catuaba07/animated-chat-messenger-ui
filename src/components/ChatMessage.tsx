@@ -54,7 +54,9 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
               : "bg-chat-bubble-received text-gray-100"
           )}
         >
-          <p className="text-sm">{highlightMentions(message.text)}</p>
+          <p className="text-sm whitespace-pre-line">
+            {highlightMentions(message.text)}
+          </p>
           <span className="text-[10px] text-gray-300 block text-right mt-1">
             {message.timestamp}
           </span>
