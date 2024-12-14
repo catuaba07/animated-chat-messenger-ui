@@ -2,6 +2,8 @@ import React from "react";
 import { Message } from "@/data/messages";
 import { cn } from "@/lib/utils";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { FileText, Video } from "lucide-react";
 
 interface ChatMessageProps {
   message: Message;
@@ -27,6 +29,44 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
       }
       return word + " ";
     });
+  };
+
+  const renderMedia = () => {
+    if (!message.mediaType) return null;
+
+    switch (message.mediaType) {
+      case "document":
+        return (
+          <div className="mt-2 bg-gray-100 rounded-lg p-3 flex items-center gap-3 cursor-pointer hover:bg-gray-200">
+            <FileText className="h-8 w-8 text-blue-500" />
+            <div className="flex-1">
+              <div className="text-sm font-medium">{message.mediaTitle}</div>
+              <div className="text-xs text-gray-500">{message.mediaSize}</div>
+            </div>
+          </div>
+        );
+      case "video":
+        return (
+          <div className="mt-2 bg-gray-100 rounded-lg p-3 flex items-center gap-3 cursor-pointer hover:bg-gray-200">
+            <Video className="h-8 w-8 text-red-500" />
+            <div className="flex-1">
+              <div className="text-sm font-medium">{message.mediaTitle}</div>
+              <div className="text-xs text-gray-500">{message.mediaSize}</div>
+            </div>
+          </div>
+        );
+      case "button":
+        return (
+          <Button
+            className="mt-2 w-full bg-blue-500 hover:bg-blue-600 text-white"
+            onClick={() => console.log("Button clicked:", message.buttonText)}
+          >
+            {message.buttonText}
+          </Button>
+        );
+      default:
+        return null;
+    }
   };
 
   const isBot = message.sender.includes("(Bot)");
@@ -69,6 +109,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
           <p className="text-sm whitespace-pre-line">
             {highlightMentions(message.text)}
           </p>
+          {renderMedia()}
           <span className="text-[10px] text-gray-300 block text-right mt-1">
             {message.timestamp}
           </span>

@@ -23,36 +23,98 @@
   {
     "id": 4,
     "sender": "Tutor de IA (Bot)",
-    "text": "Lição 1: Fundamentos da Agrofloresta. Aqui estão os materiais:\n1) Um documento intitulado 'O que é Agrofloresta?' (https://example.com/doc-agrofloresta)\n2) Um vídeo explicando sistemas agroflorestais (https://example.com/video-intro)\n\nPor favor, revise-os e clique em 'Prosseguir para Desafios' quando estiver pronto.",
+    "text": "Lição 1: Fundamentos da Agrofloresta. Aqui estão seus materiais de aprendizagem:",
     "timestamp": "09h03",
     "isSentByMe": false
   },
   {
     "id": 5,
-    "sender": "Estudante",
-    "text": "Já revisei os materiais. Prosseguir para Desafios.",
-    "timestamp": "09h10",
-    "isSentByMe": true
+    "sender": "Tutor de IA (Bot)",
+    "text": "📄 O que é Agrofloresta?",
+    "timestamp": "09h03",
+    "isSentByMe": false,
+    "mediaType": "document",
+    "mediaUrl": "https://example.com/doc-agrofloresta",
+    "mediaTitle": "Fundamentos_Agrofloresta.pdf",
+    "mediaSize": "2,3 MB"
   },
   {
     "id": 6,
+    "sender": "Tutor de IA (Bot)",
+    "text": "🎥 Introdução aos Sistemas Agroflorestais",
+    "timestamp": "09h03",
+    "isSentByMe": false,
+    "mediaType": "video",
+    "mediaUrl": "https://www.youtube.com/watch?v=example",
+    "mediaTitle": "Intro_Agrofloresta.mp4",
+    "mediaSize": "15,7 MB"
+  },
+  {
+    "id": 7,
+    "sender": "Tutor de IA (Bot)",
+    "text": "Quando estiver pronto para prosseguir com os desafios, clique no botão abaixo:",
+    "timestamp": "09h04",
+    "isSentByMe": false,
+    "mediaType": "button",
+    "buttonText": "Continuar para Desafios"
+  },
+  {
+    "id": 8,
     "sender": "Tutor de IA (Bot)",
     "text": "Ótimo! Aqui está seu primeiro desafio:\nPergunta: Quais são os principais benefícios da agrofloresta para o meio ambiente e as comunidades locais? Por favor, forneça pelo menos dois exemplos.",
     "timestamp": "09h11",
     "isSentByMe": false
   },
   {
-    "id": 7,
+    "id": 9,
     "sender": "Estudante",
     "text": "Ajuda a prevenir o desmatamento e melhora a qualidade do solo. Também fornece alimentos e renda para as comunidades locais.",
     "timestamp": "09h12",
     "isSentByMe": true
   },
   {
-    "id": 8,
+    "id": 10,
     "sender": "Tutor de IA (Bot)",
-    "text": "Muito bem! Sua resposta está correta. A agrofloresta previne o desmatamento ao integrar árvores com agricultura, e melhora a qualidade do solo através da matéria orgânica. Também sustenta os meios de vida locais. Vamos passar para a próxima lição!",
+    "text": "Muito bem! Sua resposta está correta. A agrofloresta previne o desmatamento ao integrar árvores com agricultura, e melhora a qualidade do solo através da matéria orgânica. Também sustenta os meios de vida locais. Vamos passar para a Lição 2!",
     "timestamp": "09h13",
     "isSentByMe": false
+  },
+  {
+    "id": 11,
+    "sender": "Tutor de IA (Bot)",
+    "text": "Lição 2: Projetando Sistemas Agroflorestais",
+    "timestamp": "09h14",
+    "isSentByMe": false
+  },
+  {
+    "id": 12,
+    "sender": "Tutor de IA (Bot)",
+    "text": "📄 Princípios de Design para Sistemas Agroflorestais",
+    "timestamp": "09h14",
+    "isSentByMe": false,
+    "mediaType": "document",
+    "mediaUrl": "https://example.com/doc-principios-design",
+    "mediaTitle": "Principios_Design.pdf",
+    "mediaSize": "4,1 MB"
+  },
+  {
+    "id": 13,
+    "sender": "Tutor de IA (Bot)",
+    "text": "🎥 Agrofloresta em Ação: Estudos de Caso",
+    "timestamp": "09h14",
+    "isSentByMe": false,
+    "mediaType": "video",
+    "mediaUrl": "https://www.youtube.com/watch?v=example2",
+    "mediaTitle": "Casos_Agrofloresta.mp4",
+    "mediaSize": "23,4 MB"
+  },
+  {
+    "id": 14,
+    "sender": "Tutor de IA (Bot)",
+    "text": "Pronto para o próximo desafio?",
+    "timestamp": "09h15",
+    "isSentByMe": false,
+    "mediaType": "button",
+    "buttonText": "Continuar para Desafios"
   }
 ]
