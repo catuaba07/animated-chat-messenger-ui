@@ -1,4 +1,6 @@
-import { messages } from "@/data/messages";
+import { messages as fundingMessages } from "@/data/messages";
+import { messages as courseMessages } from "@/data/course_messages";
+import { messages as supportMessages } from "@/data/support_messages";
 import ChatContainer from "@/components/ChatContainer";
 import { Button } from "@/components/ui/button";
 import { RefreshCw, Info, SkipForward, ChevronDown } from "lucide-react";
@@ -30,14 +32,40 @@ const Index = () => {
 
   useEffect(() => {
     if (language === "pt") {
-      import("@/data/messages_pt.json").then((module) => {
+      let messageFile = "";
+      switch (story) {
+        case "funding":
+          messageFile = "@/data/messages_pt.json";
+          break;
+        case "course":
+          messageFile = "@/data/course_messages_pt.json";
+          break;
+        case "support":
+          messageFile = "@/data/support_messages_pt.json";
+          break;
+      }
+      import(messageFile).then((module) => {
         setImportedMessages(module.default);
       });
     }
-  }, [language]);
+  }, [language, story]);
 
-  const currentMessages =
-    language === "en" ? messages : importedMessages || messages;
+  const getMessages = () => {
+    if (language === "pt") {
+      return importedMessages || [];
+    }
+    
+    switch (story) {
+      case "funding":
+        return fundingMessages;
+      case "course":
+        return courseMessages;
+      case "support":
+        return supportMessages;
+      default:
+        return fundingMessages;
+    }
+  };
 
   const handleReset = () => {
     setKey((prev) => prev + 1);
@@ -149,7 +177,7 @@ const Index = () => {
         >
           <ChatContainer
             key={key}
-            messages={currentMessages}
+            messages={getMessages()}
             immediate={immediate}
             reset={handleReset}
           />

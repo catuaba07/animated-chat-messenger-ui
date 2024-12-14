@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "sender": "Assistente de IA (Bot)",
+    "text": "Bem-vindo ao Curso de Sistemas de Conhecimento Indígena! Estou aqui para ajudá-lo a navegar pelos módulos e tarefas. O que você gostaria de saber sobre o curso?",
+    "timestamp": "09h00",
+    "isSentByMe": false
+  },
+  {
+    "id": 2,
+    "sender": "Maria",
+    "text": "Oi! Gostaria de saber mais sobre a estrutura do curso.",
+    "timestamp": "09h01",
+    "isSentByMe": true
+  },
+  {
+    "id": 3,
+    "sender": "Assistente de IA (Bot)",
+    "text": "O curso está dividido em 4 módulos:\n1. Conhecimento Ecológico Tradicional\n2. Sistemas Agrícolas Indígenas\n3. Métodos de Preservação Cultural\n4. Pesquisa Baseada na Comunidade\n\nCada módulo inclui:\n- Videoaulas\n- Materiais de leitura\n- Fóruns de discussão\n- Tarefas práticas\n\nGostaria de detalhes sobre algum módulo específico?",
+    "timestamp": "09h02",
+    "isSentByMe": false
+  },
+  {
+    "id": 4,
+    "sender": "Maria",
+    "text": "Sim, me fale mais sobre o módulo de Conhecimento Ecológico Tradicional.",
+    "timestamp": "09h03",
+    "isSentByMe": true
+  },
+  {
+    "id": 5,
+    "sender": "Assistente de IA (Bot)",
+    "text": "O módulo de Conhecimento Ecológico Tradicional abrange:\n\n1. Compreensão dos Ecossistemas Locais:\n- Identificação de flora e fauna\n- Padrões sazonais e indicadores\n- Práticas tradicionais de conservação\n\n2. Locais Naturais Sagrados:\n- Significado cultural\n- Métodos de proteção\n- Governança comunitária\n\n3. Atividades Práticas:\n- Visitas de campo a locais sagrados\n- Entrevistas com anciãos\n- Mapeamento do ecossistema\n\nO módulo leva 3 semanas para ser concluído. Gostaria de começar com este módulo?",
+    "timestamp": "09h04",
+    "isSentByMe": false
+  }
+]
