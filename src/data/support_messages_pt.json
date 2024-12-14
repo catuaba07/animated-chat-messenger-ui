@@ -1,36 +1,36 @@
 [
   {
     "id": 1,
-    "sender": "Assistente de IA (Bot)",
-    "text": "Olá! Sou seu assistente de suporte técnico da Earth Defenders. Posso ajudar você com:\n- Instalação de painéis solares\n- Sistemas de filtração de água\n- Dispositivos de monitoramento ecológico\n- Soluções de energia renovável\n\nComo posso ajudar você hoje?",
+    "sender": "Agente de Suporte IA (Bot)",
+    "text": "Olá! Bem-vindo ao Suporte Earth Defenders. Como posso ajudar você hoje?",
     "timestamp": "10h00",
     "isSentByMe": false
   },
   {
     "id": 2,
-    "sender": "Maria",
-    "text": "Oi, estou tendo problemas com o sistema de painéis solares instalado na semana passada.",
+    "sender": "Usuário",
+    "text": "Oi, estou tendo problemas para acessar o recurso de monitoramento por satélite.",
     "timestamp": "10h01",
     "isSentByMe": true
   },
   {
     "id": 3,
-    "sender": "Assistente de IA (Bot)",
-    "text": "Sinto muito ouvir isso. Deixe-me ajudá-lo a resolver o problema. Você poderia me dizer:\n1. O sistema está mostrando alguma luz de erro?\n2. Você está obtendo alguma saída de energia?\n3. Você verificou o visor da bateria?",
+    "sender": "Agente de Suporte IA (Bot)",
+    "text": "Lamento ouvir isso. Deixe-me ajudar você a resolver o problema. Poderia me dizer:\n1. Qual navegador você está usando?\n2. Você limpou o cache recentemente?\n3. Está recebendo alguma mensagem de erro específica?",
     "timestamp": "10h02",
     "isSentByMe": false
   },
   {
     "id": 4,
-    "sender": "Maria",
-    "text": "O visor da bateria mostra 'Baixa Voltagem' e há uma luz vermelha piscando.",
+    "sender": "Usuário",
+    "text": "Estou usando o Chrome, não limpei o cache e recebo uma mensagem de 'Falha no Carregamento'.",
     "timestamp": "10h03",
     "isSentByMe": true
   },
   {
     "id": 5,
-    "sender": "Assistente de IA (Bot)",
-    "text": "Entendo o problema. Isso geralmente indica uma de duas coisas:\n1. Os painéis solares não estão recebendo luz solar suficiente\n2. Pode haver uma conexão solta\n\nVamos verificar algumas coisas:\n- Os painéis estão limpos e livres de detritos?\n- Existem novas fontes de sombra (crescimento de árvores, novas estruturas)?\n- Você pode verificar se todos os cabos estão firmemente conectados?\n\nGostaria que eu o guiasse por essas verificações passo a passo?",
+    "sender": "Agente de Suporte IA (Bot)",
+    "text": "Obrigado pelas informações. Vamos tentar estas etapas:\n1. Limpar o cache do navegador\n2. Atualizar a página\n3. Certificar-se de que você está logado\n\nMe avise se precisar de ajuda com qualquer uma dessas etapas.",
     "timestamp": "10h04",
     "isSentByMe": false
   }
