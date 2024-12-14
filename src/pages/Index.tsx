@@ -3,12 +3,20 @@ import ChatContainer from "@/components/ChatContainer";
 import { Button } from "@/components/ui/button";
 import { RefreshCw, ChevronDown, SkipForward } from "lucide-react";
 import { useState, useEffect } from "react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const Index = () => {
   const [key, setKey] = useState(0);
   const [immediate, setImmediate] = useState(false);
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [language, setLanguage] = useState("en");
+  const [story, setStory] = useState("funding");
 
   const [importedMessages, setImportedMessages] = useState(null);
 
@@ -47,13 +55,33 @@ const Index = () => {
     setShowScrollButton(isNotAtBottom);
   };
 
+  const stories = {
+    funding: "Funding Opportunity Plugin",
+    course: "Course Plugin",
+    support: "Product Support Plugin"
+  };
+
   return (
     <div className="min-h-screen bg-chat-bg">
       <div className="max-w-3xl mx-auto h-screen flex flex-col">
         <div className="bg-chat-bubble-received/30 p-4 flex justify-between items-center">
-          <h1 className="text-white text-xl font-semibold">
-            Earth Defenders Assistant
-          </h1>
+          <div className="flex items-center gap-4">
+            <h1 className="text-white text-xl font-semibold">
+              Earth Defenders Assistant
+            </h1>
+            <Select value={story} onValueChange={setStory}>
+              <SelectTrigger className="w-[200px] bg-chat-bubble-received/60 border-none text-white">
+                <SelectValue placeholder="Select story" />
+              </SelectTrigger>
+              <SelectContent>
+                {Object.entries(stories).map(([key, value]) => (
+                  <SelectItem key={key} value={key}>
+                    {value}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
           <div className="flex gap-2">
             <Button
               variant="ghost"
