@@ -4,6 +4,11 @@ export interface Message {
   text: string;
   timestamp: string;
   isSentByMe: boolean;
+  mediaType?: "video" | "document" | "button";
+  mediaUrl?: string;
+  mediaTitle?: string;
+  mediaSize?: string;
+  buttonText?: string;
 }
 
 export const messages: Message[] = [
