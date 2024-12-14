@@ -5,6 +5,7 @@ import TypingIndicator from "./TypingIndicator";
 
 interface ChatContainerProps {
   messages: Message[];
+  reset: () => void;  // Added reset to the interface
 }
 
 const ChatContainer: React.FC<ChatContainerProps & { immediate?: boolean }> = ({
