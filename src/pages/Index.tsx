@@ -1,7 +1,7 @@
 import { messages } from "@/data/messages";
 import ChatContainer from "@/components/ChatContainer";
 import { Button } from "@/components/ui/button";
-import { RefreshCw, Info, SkipForward } from "lucide-react";
+import { RefreshCw, Info, SkipForward, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
   Select,
@@ -160,7 +160,7 @@ const Index = () => {
               onClick={scrollToBottom}
               className="fixed bottom-20 right-4 bg-chat-bubble-received/60 rounded-full text-white hover:bg-chat-bubble-received/80"
             >
-              <ChevronDown />
+              <ChevronDown className="h-5 w-5" />
             </Button>
           )}
         </div>
