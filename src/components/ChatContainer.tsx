@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Message } from "@/data/messages";
+import { Message } from "@/data/grant_messages";
 import ChatMessage from "./ChatMessage";
 import TypingIndicator from "./TypingIndicator";
 
@@ -59,7 +59,7 @@ const ChatContainer: React.FC<ChatContainerProps & { immediate?: boolean }> = ({
           index === 0 || visibleMessages[index - 1].sender !== message.sender;
         return (
           <ChatMessage
-            key={message.id}
+            key={index}
             message={message}
             showSender={showSender}
           />

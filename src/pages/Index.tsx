@@ -1,4 +1,4 @@
-import { messages as fundingMessages } from "@/data/messages";
+import { messages as fundingMessages } from "@/data/grant_messages";
 import { messages as courseMessages } from "@/data/course_messages";
 import { messages as supportMessages } from "@/data/support_messages";
 import ChatContainer from "@/components/ChatContainer";
