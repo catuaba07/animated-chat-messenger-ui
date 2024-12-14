@@ -1,7 +1,7 @@
 import { messages } from "@/data/messages";
 import ChatContainer from "@/components/ChatContainer";
 import { Button } from "@/components/ui/button";
-import { RefreshCw, ChevronDown, SkipForward } from "lucide-react";
+import { RefreshCw, Info, SkipForward } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
   Select,
@@ -10,6 +10,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Index = () => {
   const [key, setKey] = useState(0);
@@ -20,7 +28,6 @@ const Index = () => {
 
   const [importedMessages, setImportedMessages] = useState(null);
 
-  // Load Portuguese messages if needed
   useEffect(() => {
     if (language === "pt") {
       import("@/data/messages_pt.json").then((module) => {
@@ -65,24 +72,52 @@ const Index = () => {
     <div className="min-h-screen bg-chat-bg">
       <div className="max-w-3xl mx-auto h-screen flex flex-col">
         <div className="bg-chat-bubble-received/30 p-4 flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <h1 className="text-white text-xl font-semibold">
-              Earth Defenders Assistant
-            </h1>
-            <Select value={story} onValueChange={setStory}>
-              <SelectTrigger className="w-[200px] bg-chat-bubble-received/60 border-none text-white">
-                <SelectValue placeholder="Select story" />
-              </SelectTrigger>
-              <SelectContent>
-                {Object.entries(stories).map(([key, value]) => (
-                  <SelectItem key={key} value={key}>
-                    {value}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
+          <Select value={story} onValueChange={setStory}>
+            <SelectTrigger className="w-[200px] bg-chat-bubble-received/60 border-none text-white">
+              <SelectValue placeholder="Select story" />
+            </SelectTrigger>
+            <SelectContent>
+              {Object.entries(stories).map(([key, value]) => (
+                <SelectItem key={key} value={key}>
+                  {value}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
           <div className="flex gap-2">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-white hover:text-blue-700/80"
+                >
+                  <Info className="h-5 w-5" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>About Earth Defenders Assistant</DialogTitle>
+                  <DialogDescription>
+                    <p className="mt-2">
+                      Earth Defenders Assistant is an AI-powered chat interface designed to help environmental activists and organizations.
+                    </p>
+                    <p className="mt-2">
+                      Visit our{" "}
+                      <a
+                        href="https://github.com/yourusername/earth-defenders-assistant"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:underline"
+                      >
+                        GitHub repository
+                      </a>
+                      {" "}for more information.
+                    </p>
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
             <Button
               variant="ghost"
               onClick={() => setLanguage(language === "en" ? "pt" : "en")}
@@ -96,7 +131,7 @@ const Index = () => {
               onClick={handleAdvance}
               className="text-white hover:text-blue-700/80"
             >
-              <SkipForward />
+              <SkipForward className="h-5 w-5" />
             </Button>
             <Button
               variant="ghost"
