@@ -2,27 +2,9 @@ import { messages as fundingMessages } from "@/data/grant_messages";
 import { messages as courseMessages } from "@/data/course_messages";
 import { messages as supportMessages } from "@/data/support_messages";
 import ChatContainer from "@/components/ChatContainer";
-import { Button } from "@/components/ui/button";
-import { RefreshCw, Info, SkipForward } from "lucide-react";
 import { useState, useEffect } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { useNavigate, useLocation } from "react-router-dom";
-import ShareButton from "@/components/ShareButton";
-import MobileMenu from "@/components/MobileMenu";
+import Header from "@/components/Header";
 
 const Index = () => {
   const [key, setKey] = useState(0);
@@ -32,15 +14,16 @@ const Index = () => {
   const location = useLocation();
   
   // Parse URL parameters
-  const searchParams = new URLSearchParams(location.search);
-  const [language, setLanguage] = useState(searchParams.get("lang") || "en");
-  const [story, setStory] = useState(searchParams.get("story") || "funding");
+  const params = new URLSearchParams(location.search);
+  const [language, setLanguage] = useState(params.get("lang") || "en");
+  const [story, setStory] = useState(location.pathname.slice(1) || "funding");
 
   const [importedMessages, setImportedMessages] = useState(null);
 
   useEffect(() => {
     // Update URL when story or language changes
     navigate(`/${story}?lang=${language}`, { replace: true });
+    console.log("Route updated:", story, language);
 
     if (language === "pt") {
       let messageFile = "";
@@ -87,13 +70,6 @@ const Index = () => {
     setImmediate(true);
   };
 
-  const scrollToBottom = () => {
-    const chatContainer = document.querySelector(".chat-scroll-container");
-    if (chatContainer) {
-      chatContainer.scrollTop = chatContainer.scrollHeight;
-    }
-  };
-
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const target = e.target as HTMLDivElement;
     const isNotAtBottom =
@@ -101,96 +77,27 @@ const Index = () => {
     setShowScrollButton(isNotAtBottom);
   };
 
-  const stories = {
-    funding: "Funding Opportunity Plugin",
-    course: "Course Plugin",
-    support: "Product Support Plugin"
+  const handleStoryChange = (newStory: string) => {
+    setStory(newStory);
+    navigate(`/${newStory}?lang=${language}`);
+  };
+
+  const handleLanguageChange = (newLang: string) => {
+    setLanguage(newLang);
+    navigate(`/${story}?lang=${newLang}`);
   };
 
   return (
     <div className="min-h-screen bg-chat-bg">
       <div className="max-w-3xl mx-auto h-screen flex flex-col">
-        <div className="bg-chat-bubble-received/30 p-4 flex justify-between items-center">
-          <div className="hidden md:block">
-            <Select value={story} onValueChange={(value) => setStory(value)}>
-              <SelectTrigger className="w-[200px] bg-chat-bubble-received/60 border-none text-white">
-                <SelectValue placeholder="Select story" />
-              </SelectTrigger>
-              <SelectContent>
-                {Object.entries(stories).map(([key, value]) => (
-                  <SelectItem key={key} value={key}>
-                    {value}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-          <div className="flex gap-2">
-            <ShareButton />
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-white hover:text-blue-700/80"
-                >
-                  <Info className="h-5 w-5" />
-                </Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>About Earth Defenders Assistant</DialogTitle>
-                  <DialogDescription>
-                    <p className="mt-2">
-                      Earth Defenders Assistant is an AI-powered chat interface designed to help environmental activists and organizations.
-                    </p>
-                    <p className="mt-2">
-                      Visit our{" "}
-                      <a
-                        href="https://github.com/yourusername/earth-defenders-assistant"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-500 hover:underline"
-                      >
-                        GitHub repository
-                      </a>
-                      {" "}for more information.
-                    </p>
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
-            <Button
-              variant="ghost"
-              onClick={() => setLanguage(language === "en" ? "pt" : "en")}
-              className="text-white hover:text-blue-700/80 hidden md:inline-flex"
-            >
-              {language === "en" ? "PT" : "EN"}
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={handleAdvance}
-              className="text-white hover:text-blue-700/80"
-            >
-              <SkipForward className="h-5 w-5" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={handleReset}
-              className="text-white hover:text-blue-700/80"
-            >
-              <RefreshCw className="h-5 w-5" />
-            </Button>
-            <MobileMenu
-              currentStory={story}
-              currentLanguage={language}
-              onStoryChange={setStory}
-              onLanguageChange={setLanguage}
-            />
-          </div>
-        </div>
+        <Header
+          currentStory={story}
+          currentLanguage={language}
+          onStoryChange={handleStoryChange}
+          onLanguageChange={handleLanguageChange}
+          onReset={handleReset}
+          onAdvance={handleAdvance}
+        />
         <div
           className="flex-1 overflow-y-auto chat-scroll-container relative"
           onScroll={handleScroll}

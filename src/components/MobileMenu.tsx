@@ -4,35 +4,19 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu } from "lucide-react";
+import { Menu, RefreshCw, SkipForward } from "lucide-react";
 import { Button } from "./ui/button";
-import { useNavigate } from "react-router-dom";
+import ShareButton from "./ShareButton";
 
 interface MobileMenuProps {
-  currentStory: string;
-  currentLanguage: string;
-  onStoryChange: (story: string) => void;
-  onLanguageChange: (lang: string) => void;
+  onReset: () => void;
+  onAdvance: () => void;
 }
 
 const MobileMenu = ({
-  currentStory,
-  currentLanguage,
-  onStoryChange,
-  onLanguageChange,
+  onReset,
+  onAdvance,
 }: MobileMenuProps) => {
-  const navigate = useNavigate();
-
-  const handleStoryChange = (story: string) => {
-    onStoryChange(story);
-    navigate(`/${story}?lang=${currentLanguage}`);
-  };
-
-  const handleLanguageChange = (lang: string) => {
-    onLanguageChange(lang);
-    navigate(`/${currentStory}?lang=${lang}`);
-  };
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -45,17 +29,16 @@ const MobileMenu = ({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => handleStoryChange("funding")}>
-          Funding Opportunity Plugin
+        <DropdownMenuItem className="gap-2" onClick={onAdvance}>
+          <SkipForward className="h-4 w-4" />
+          Skip
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleStoryChange("course")}>
-          Course Plugin
+        <DropdownMenuItem className="gap-2" onClick={onReset}>
+          <RefreshCw className="h-4 w-4" />
+          Reset
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleStoryChange("support")}>
-          Product Support Plugin
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleLanguageChange(currentLanguage === "en" ? "pt" : "en")}>
-          {currentLanguage === "en" ? "Portuguese" : "English"}
+        <DropdownMenuItem asChild>
+          <ShareButton />
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
