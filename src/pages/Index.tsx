@@ -3,7 +3,7 @@ import { messages as courseMessages } from "@/data/course_messages";
 import { messages as supportMessages } from "@/data/support_messages";
 import ChatContainer from "@/components/ChatContainer";
 import { Button } from "@/components/ui/button";
-import { RefreshCw, Info, SkipForward, ChevronDown } from "lucide-react";
+import { RefreshCw, Info, SkipForward } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
   Select,
@@ -20,17 +20,28 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useNavigate, useLocation } from "react-router-dom";
+import ShareButton from "@/components/ShareButton";
+import MobileMenu from "@/components/MobileMenu";
 
 const Index = () => {
   const [key, setKey] = useState(0);
   const [immediate, setImmediate] = useState(false);
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const [language, setLanguage] = useState("en");
-  const [story, setStory] = useState("funding");
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  // Parse URL parameters
+  const searchParams = new URLSearchParams(location.search);
+  const [language, setLanguage] = useState(searchParams.get("lang") || "en");
+  const [story, setStory] = useState(searchParams.get("story") || "funding");
 
   const [importedMessages, setImportedMessages] = useState(null);
 
   useEffect(() => {
+    // Update URL when story or language changes
+    navigate(`/${story}?lang=${language}`, { replace: true });
+
     if (language === "pt") {
       let messageFile = "";
       switch (story) {
@@ -48,7 +59,7 @@ const Index = () => {
         setImportedMessages(module.default);
       });
     }
-  }, [language, story]);
+  }, [language, story, navigate]);
 
   const getMessages = () => {
     if (language === "pt") {
@@ -100,19 +111,22 @@ const Index = () => {
     <div className="min-h-screen bg-chat-bg">
       <div className="max-w-3xl mx-auto h-screen flex flex-col">
         <div className="bg-chat-bubble-received/30 p-4 flex justify-between items-center">
-          <Select value={story} onValueChange={setStory}>
-            <SelectTrigger className="w-[200px] bg-chat-bubble-received/60 border-none text-white">
-              <SelectValue placeholder="Select story" />
-            </SelectTrigger>
-            <SelectContent>
-              {Object.entries(stories).map(([key, value]) => (
-                <SelectItem key={key} value={key}>
-                  {value}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <div className="hidden md:block">
+            <Select value={story} onValueChange={(value) => setStory(value)}>
+              <SelectTrigger className="w-[200px] bg-chat-bubble-received/60 border-none text-white">
+                <SelectValue placeholder="Select story" />
+              </SelectTrigger>
+              <SelectContent>
+                {Object.entries(stories).map(([key, value]) => (
+                  <SelectItem key={key} value={key}>
+                    {value}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
           <div className="flex gap-2">
+            <ShareButton />
             <Dialog>
               <DialogTrigger asChild>
                 <Button
@@ -149,7 +163,7 @@ const Index = () => {
             <Button
               variant="ghost"
               onClick={() => setLanguage(language === "en" ? "pt" : "en")}
-              className="text-white hover:text-blue-700/80"
+              className="text-white hover:text-blue-700/80 hidden md:inline-flex"
             >
               {language === "en" ? "PT" : "EN"}
             </Button>
@@ -169,6 +183,12 @@ const Index = () => {
             >
               <RefreshCw className="h-5 w-5" />
             </Button>
+            <MobileMenu
+              currentStory={story}
+              currentLanguage={language}
+              onStoryChange={setStory}
+              onLanguageChange={setLanguage}
+            />
           </div>
         </div>
         <div
@@ -181,16 +201,6 @@ const Index = () => {
             immediate={immediate}
             reset={handleReset}
           />
-          {showScrollButton && (
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={scrollToBottom}
-              className="fixed bottom-20 right-4 bg-chat-bubble-received/60 rounded-full text-white hover:bg-chat-bubble-received/80"
-            >
-              <ChevronDown className="h-5 w-5" />
-            </Button>
-          )}
         </div>
         <div className="p-4 bg-chat-bubble-received/30">
           <div className="bg-chat-bubble-received rounded-full px-4 py-2 text-gray-400">
