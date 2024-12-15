@@ -1,71 +1,71 @@
-# Welcome to your GPT Engineer project
+# Earth Defenders Assistant - Interactive User Stories
 
-## Project info
+An interactive chat interface designed to simulate WhatsApp-style conversations, providing a dynamic platform to showcase user stories for the [Earth Defenders Assistant](https://github.com/digidem/earth-defenders-assistant) project.
 
-**URL**: https://run.gptengineer.app/projects/ee33fc73-5ce3-4ba8-8ff5-b312b75d24fc/improve
+**Live Demo**: [Explore the Demo](https://eda-user-story.surge.sh/)  
 
-## How can I edit this code?
+## Key Features
 
-There are several ways of editing your application.
+- **WhatsApp-style Chat Interface**: Experience a familiar and intuitive chat layout.
+- **Animated Typing Indicators**: Real-time feedback with smooth animations.
+- **Mobile-Responsive Design**: Seamless experience across all devices.
+- **Share Functionality**: Easily share conversations and stories.
+- **Interactive Story Progression**: Engage with evolving narratives.
 
-**Use GPT Engineer**
+## Technologies Utilized
 
-Simply visit the GPT Engineer project at [GPT Engineer](https://gptengineer.app/projects/ee33fc73-5ce3-4ba8-8ff5-b312b75d24fc/improve) and start prompting.
+This project leverages cutting-edge web technologies:
 
-Changes made via gptengineer.app will be committed automatically to this repo.
+- **React**: For building user interfaces.
+- **TypeScript**: Ensuring type safety and scalability.
+- **Tailwind CSS**: For rapid and responsive UI styling.
+- **shadcn/ui Components**: Modular and reusable UI components.
+- **Vite**: A fast and modern build tool.
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in the GPT Engineer UI.
+Ensure you have Node.js and npm installed. You can [install them using nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation Steps
 
-Follow these steps:
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/luandro/animated-chat-messenger-ui.git
+   cd animated-chat-messenger-ui
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. Install the project dependencies:
+   ```bash
+   npm install
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+4. Open your browser and navigate to `http://localhost:3000` to view the application.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
 
-**Edit a file directly in GitHub**
+## Creating New User Stories
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+To create new user stories for the Earth Defenders Assistant Chat Interface, follow these steps to add JSON and TypeScript files according to the specified format.
 
-**Use GitHub Codespaces**
+### Step 1: Message Structure
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Ensure your messages adhere to the `Message` interface. Each message should include the following properties:
 
-## What technologies are used for this project?
+- `sender`: The name of the message sender.
+- `text`: The content of the message.
+- `timestamp`: The time the message was sent.
+- `isSentByMe`: A boolean indicating if the message was sent by the user.
+- Optional properties for media messages:
+  - `mediaType`: Type of media, can be "video", "document", or "button".
+  - `mediaUrl`: URL to the media file.
+  - `mediaTitle`: Title of the media.
+  - `mediaSize`: Size of the media file.
+  - `buttonText`: Text for button-type media.
 
-This project is built with .
+### Step 2: Create a JSON File and Translation
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-All GPT Engineer projects can be deployed directly via the GPT Engineer app.
-
-Simply visit your project at [GPT Engineer](https://gptengineer.app/projects/ee33fc73-5ce3-4ba8-8ff5-b312b75d24fc/improve) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.gptengineer.app/tips-tricks/custom-domain/)
+Create a JSON file in the `src/data/` directory. This file should contain an array of message objects following the `Message` interface. Additionally, create a translation file to support multiple languages for the messages.
