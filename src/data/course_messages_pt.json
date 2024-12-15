@@ -1,106 +1,218 @@
 [
   {
     "sender": "Estudante",
-    "text": "Gostaria de me inscrever no curso de Agrofloresta.",
-    "timestamp": "09h00",
+    "text": "Oi!",
+    "timestamp": "09:00 AM",
     "isSentByMe": true
   },
   {
-    "sender": "Agente Gerenciador de IA (Bot)",
-    "text": "Bem-vindo ao curso de Práticas Agroflorestais para Meios de Vida Sustentáveis! Você está inscrito. Seu tutor de IA irá guiá-lo através das lições. Vamos começar!",
-    "timestamp": "09h01",
+    "sender": "Assistente de IA (Bot)",
+    "text": "Olá! Sou seu assistente de aprendizado. Posso guiá-lo por uma variedade de cursos. Aqui estão algumas opções que podem te interessar:",
+    "timestamp": "09:01 AM",
+    "isSentByMe": false
+  },
+  {
+    "sender": "Assistente de IA (Bot)",
+    "text": "1️⃣ Práticas Agroflorestais para Sustentabilidade\n2️⃣ Técnicas de Coleta de Sementes\n3️⃣ Desenvolvimento de Negócios de Bioeconomia\nQual curso você gostaria de se inscrever?",
+    "timestamp": "09:01 AM",
+    "isSentByMe": false
+  },
+  {
+    "sender": "Estudante",
+    "text": "Gostaria de me inscrever no curso de Agrofloresta.",
+    "timestamp": "09:02 AM",
+    "isSentByMe": true
+  },
+  {
+    "sender": "Agente Gerente de IA (Bot)",
+    "text": "Bem-vindo ao curso Práticas Agroflorestais para Sustentabilidade! Você está matriculado. Seu tutor de IA irá guiá-lo pelas aulas. Vamos começar!",
+    "timestamp": "09:03 AM",
     "isSentByMe": false
   },
   {
     "sender": "Tutor de IA (Bot)",
-    "text": "Olá! Bem-vindo ao curso de Agrofloresta. Este curso tem 3 lições cobrindo práticas agroflorestais sustentáveis. Após cada lição, você enfrentará desafios para testar sua compreensão. Vamos começar com a Lição 1: 'Introdução à Agrofloresta'.",
-    "timestamp": "09h02",
+    "text": "Oi! Bem-vindo ao curso de Agrofloresta. Este curso tem 3 aulas sobre práticas sustentáveis de agrofloresta. Após cada aula, haverá desafios para testar sua compreensão. Vamos começar com a Aula 1: 'Introdução à Agrofloresta.'",
+    "timestamp": "09:04 AM",
     "isSentByMe": false
   },
   {
     "sender": "Tutor de IA (Bot)",
-    "text": "Lição 1: Fundamentos da Agrofloresta. Aqui estão seus materiais de aprendizagem:",
-    "timestamp": "09h03",
+    "text": "Aula 1: Conceitos Básicos de Agrofloresta. Aqui estão seus materiais de aprendizado:",
+    "timestamp": "09:05 AM",
     "isSentByMe": false
   },
   {
     "sender": "Tutor de IA (Bot)",
     "text": "📄 O que é Agrofloresta?",
-    "timestamp": "09h03",
+    "timestamp": "09:05 AM",
     "isSentByMe": false,
     "mediaType": "document",
-    "mediaUrl": "https://example.com/doc-agrofloresta",
-    "mediaTitle": "Fundamentos_Agrofloresta.pdf",
-    "mediaSize": "2,3 MB"
+    "mediaUrl": "https://example.com/doc-agroforestry",
+    "mediaTitle": "Agrofloresta_Basico.pdf",
+    "mediaSize": "2.3 MB"
   },
   {
     "sender": "Tutor de IA (Bot)",
     "text": "🎥 Introdução aos Sistemas Agroflorestais",
-    "timestamp": "09h03",
+    "timestamp": "09:05 AM",
     "isSentByMe": false,
     "mediaType": "video",
-    "mediaUrl": "https://www.youtube.com/watch?v=example",
-    "mediaTitle": "Intro_Agrofloresta.mp4",
-    "mediaSize": "15,7 MB"
+    "mediaUrl": "https://www.sample-videos.com/video321/mp4/360/big_buck_bunny_360p_1mb.mp4",
+    "mediaTitle": "Introducao_Agrofloresta.mp4",
+    "mediaSize": "15.7 MB"
   },
   {
     "sender": "Tutor de IA (Bot)",
-    "text": "Quando estiver pronto para prosseguir com os desafios, clique no botão abaixo:",
-    "timestamp": "09h04",
+    "text": "Quando estiver pronto para os desafios, clique no botão abaixo:",
+    "timestamp": "09:06 AM",
     "isSentByMe": false,
     "mediaType": "button",
-    "buttonText": "Continuar para Desafios"
+    "buttonText": "Ir para os Desafios"
   },
   {
     "sender": "Tutor de IA (Bot)",
     "text": "Ótimo! Aqui está seu primeiro desafio:\nPergunta: Quais são os principais benefícios da agrofloresta para o meio ambiente e as comunidades locais? Por favor, forneça pelo menos dois exemplos.",
-    "timestamp": "09h11",
+    "timestamp": "09:11 AM",
     "isSentByMe": false
   },
   {
     "sender": "Estudante",
     "text": "Ajuda a prevenir o desmatamento e melhora a qualidade do solo. Também fornece alimentos e renda para as comunidades locais.",
-    "timestamp": "09h12",
+    "timestamp": "09:12 AM",
     "isSentByMe": true
   },
   {
     "sender": "Tutor de IA (Bot)",
-    "text": "Muito bem! Sua resposta está correta. A agrofloresta previne o desmatamento ao integrar árvores com agricultura, e melhora a qualidade do solo através da matéria orgânica. Também sustenta os meios de vida locais. Vamos passar para a Lição 2!",
-    "timestamp": "09h13",
+    "text": "Muito bem! Sua resposta está correta. A agrofloresta previne o desmatamento ao integrar árvores à agricultura e melhora a qualidade do solo com matéria orgânica. Também sustenta os meios de subsistência locais. Vamos para a Aula 2!",
+    "timestamp": "09:13 AM",
     "isSentByMe": false
   },
   {
     "sender": "Tutor de IA (Bot)",
-    "text": "Lição 2: Projetando Sistemas Agroflorestais",
-    "timestamp": "09h14",
+    "text": "Aula 2: Projetando Sistemas Agroflorestais",
+    "timestamp": "09:14 AM",
     "isSentByMe": false
   },
   {
     "sender": "Tutor de IA (Bot)",
     "text": "📄 Princípios de Design para Sistemas Agroflorestais",
-    "timestamp": "09h14",
+    "timestamp": "09:14 AM",
     "isSentByMe": false,
     "mediaType": "document",
-    "mediaUrl": "https://example.com/doc-principios-design",
-    "mediaTitle": "Principios_Design.pdf",
-    "mediaSize": "4,1 MB"
+    "mediaUrl": "https://example.com/doc-design-principles",
+    "mediaTitle": "Design_Principios.pdf",
+    "mediaSize": "4.1 MB"
   },
   {
     "sender": "Tutor de IA (Bot)",
     "text": "🎥 Agrofloresta em Ação: Estudos de Caso",
-    "timestamp": "09h14",
+    "timestamp": "09:14 AM",
     "isSentByMe": false,
     "mediaType": "video",
-    "mediaUrl": "https://www.youtube.com/watch?v=example2",
-    "mediaTitle": "Casos_Agrofloresta.mp4",
-    "mediaSize": "23,4 MB"
+    "mediaUrl": "https://www.sample-videos.com/video321/mp4/360/big_buck_bunny_360p_1mb.mp4",
+    "mediaTitle": "Agrofloresta_Casos.mp4",
+    "mediaSize": "23.4 MB"
   },
   {
     "sender": "Tutor de IA (Bot)",
     "text": "Pronto para o próximo desafio?",
-    "timestamp": "09h15",
+    "timestamp": "09:15 AM",
     "isSentByMe": false,
     "mediaType": "button",
-    "buttonText": "Continuar para Desafios"
+    "buttonText": "Ir para os Desafios"
+  },
+  {
+    "sender": "Tutor de IA (Bot)",
+    "text": "Aqui está seu desafio:\nPergunta: Se você fosse projetar um sistema agroflorestal para uma comunidade, quais espécies de árvores e culturas sugeriria e por quê?",
+    "timestamp": "09:16 AM",
+    "isSentByMe": false
+  },
+  {
+    "sender": "Estudante",
+    "text": "Não tenho certeza. Posso falar com um tutor humano?",
+    "timestamp": "09:17 AM",
+    "isSentByMe": true
+  },
+  {
+    "sender": "Tutor de IA (Bot)",
+    "text": "Claro, entre em contato com Lucas",
+    "timestamp": "09:17 AM",
+    "isSentByMe": false,
+    "mediaType": "button",
+    "buttonText": "Falar com Lucas"
+  },
+  {
+    "sender": "Tutor de IA (Bot)",
+    "text": "Quando você esclarecer sua dúvida, vamos para a próxima aula. Pronto para o próximo desafio?",
+    "timestamp": "09:25 AM",
+    "isSentByMe": false,
+    "mediaType": "button",
+    "buttonText": "Ir para os Desafios"
+  },
+  {
+    "sender": "Tutor de IA (Bot)",
+    "text": "Ótimo! Com base na sua dúvida esclarecida, vamos revisar o desafio. Quais espécies você selecionaria para um sistema agroflorestal e por quê?",
+    "timestamp": "09:26 AM",
+    "isSentByMe": false
+  },
+  {
+    "sender": "Estudante",
+    "text": "Usaria ingá para fixação de nitrogênio, mandioca para renda rápida e cacau para valor de longo prazo. Eles se complementam ecologicamente e economicamente.",
+    "timestamp": "09:27 AM",
+    "isSentByMe": true
+  },
+  {
+    "sender": "Tutor de IA (Bot)",
+    "text": "Excelente resposta! Você concluiu esta aula com sucesso. Vamos para a Aula 3: Superando Desafios na Agrofloresta.",
+    "timestamp": "09:28 AM",
+    "isSentByMe": false
+  },
+  {
+    "sender": "Tutor de IA (Bot)",
+    "text": "📄 Desafios Comuns na Agrofloresta",
+    "timestamp": "09:29 AM",
+    "isSentByMe": false,
+    "mediaType": "document",
+    "mediaUrl": "https://example.com/doc-challenges",
+    "mediaTitle": "Agrofloresta_Desafios.pdf",
+    "mediaSize": "5.6 MB"
+  },
+  {
+    "sender": "Tutor de IA (Bot)",
+    "text": "🎥 Controle de Pragas na Agrofloresta",
+    "timestamp": "09:29 AM",
+    "isSentByMe": false,
+    "mediaType": "video",
+    "mediaUrl": "https://www.sample-videos.com/video321/mp4/360/big_buck_bunny_360p_1mb.mp4",
+    "mediaTitle": "Gestao_Pragas.mp4",
+    "mediaSize": "12.9 MB"
+  },
+  {
+    "sender": "Tutor de IA (Bot)",
+    "text": "Prossiga para os desafios quando estiver pronto.",
+    "timestamp": "09:30 AM",
+    "isSentByMe": false,
+    "mediaType": "button",
+    "buttonText": "Ir para os Desafios"
+  },
+  {
+    "sender": "Tutor de IA (Bot)",
+    "text": "Aqui está seu desafio:\nPergunta: Você percebe que besouros estão danificando frutos de açaí em seu sistema agroflorestal. Quais medidas tomaria para resolver esse problema?",
+    "timestamp": "09:31 AM",
+    "isSentByMe": false
+  },
+  {
+    "sender": "Estudante",
+    "text": "Usaria óleo de neem como pesticida natural e monitoraria regularmente as áreas afetadas.",
+    "timestamp": "09:32 AM",
+    "isSentByMe": true
+  },
+  {
+    "sender": "Tutor de IA (Bot)",
+    "text": "Correto! O óleo de neem é um pesticida natural eficaz. O monitoramento garante a detecção precoce de pragas. Parabéns, você concluiu o curso de Agrofloresta! Gostaria de um resumo do que aprendeu?",
+    "timestamp": "09:33 AM",
+    "isSentByMe": false,
+    "mediaType": "button",
+    "buttonText": "Obter Resumo do Curso"
   }
 ]

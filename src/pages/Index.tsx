@@ -29,13 +29,13 @@ const Index = () => {
       let messageFile = "";
       switch (story) {
         case "funding":
-          messageFile = "@/data/messages_pt.json";
+          messageFile = "../data/grant_messages_pt.json";
           break;
         case "course":
-          messageFile = "@/data/course_messages_pt.json";
+          messageFile = "../data/course_messages_pt.json";
           break;
         case "support":
-          messageFile = "@/data/support_messages_pt.json";
+          messageFile = "../data/support_messages_pt.json";
           break;
       }
       import(messageFile).then((module) => {
