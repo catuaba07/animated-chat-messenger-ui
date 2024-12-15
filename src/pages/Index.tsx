@@ -1,6 +1,10 @@
-import { messages as fundingMessages } from "@/data/grant_messages";
-import { messages as courseMessages } from "@/data/course_messages";
-import { messages as supportMessages } from "@/data/support_messages";
+import fundingMessages from "@/data/grant_messages.json";
+import courseMessages from "@/data/course_messages.json"; 
+import supportMessages from "@/data/support_messages.json";
+import fundingMessagesPt from "@/data/grant_messages_pt.json";
+import courseMessagesPt from "@/data/course_messages_pt.json";
+import supportMessagesPt from "@/data/support_messages_pt.json";
+
 import ChatContainer from "@/components/ChatContainer";
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -18,35 +22,18 @@ const Index = () => {
   const [language, setLanguage] = useState(params.get("lang") || "en");
   const [story, setStory] = useState(location.pathname.slice(1) || "funding");
 
-  const [importedMessages, setImportedMessages] = useState(null);
-
-  useEffect(() => {
-    // Update URL when story or language changes
-    navigate(`/${story}?lang=${language}`, { replace: true });
-    console.log("Route updated:", story, language);
-
-    if (language === "pt") {
-      let messageFile = "";
-      switch (story) {
-        case "funding":
-          messageFile = "../data/grant_messages_pt.json";
-          break;
-        case "course":
-          messageFile = "../data/course_messages_pt.json";
-          break;
-        case "support":
-          messageFile = "../data/support_messages_pt.json";
-          break;
-      }
-      import(messageFile).then((module) => {
-        setImportedMessages(module.default);
-      });
-    }
-  }, [language, story, navigate]);
-
   const getMessages = () => {
     if (language === "pt") {
-      return importedMessages || [];
+      switch (story) {
+        case "funding":
+          return fundingMessagesPt;
+        case "course":
+          return courseMessagesPt;
+        case "support":
+          return supportMessagesPt;
+        default:
+          return fundingMessagesPt;
+      }
     }
 
     switch (story) {
@@ -60,6 +47,7 @@ const Index = () => {
         return fundingMessages;
     }
   };
+
 
   const handleReset = () => {
     setKey((prev) => prev + 1);

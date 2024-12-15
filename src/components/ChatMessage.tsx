@@ -1,9 +1,20 @@
 import React from "react";
-import { Message } from "@/data/grant_messages";
 import { cn } from "@/lib/utils";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { FileText, Play } from "lucide-react";
+
+export interface Message {
+  sender: string;
+  text: string;
+  timestamp: string;
+  isSentByMe: boolean;
+  mediaType?: "video" | "document" | "button";
+  mediaUrl?: string;
+  mediaTitle?: string;
+  mediaSize?: string;
+  buttonText?: string;
+}
 
 interface ChatMessageProps {
   message: Message;

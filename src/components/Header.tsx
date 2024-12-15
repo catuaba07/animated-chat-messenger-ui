@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { RefreshCw, Info, SkipForward } from "lucide-react";
+import { Info } from "lucide-react";
 import {
   Select,
   SelectContent,
