@@ -1,4 +1,4 @@
-import { Share } from "lucide-react";
+import { Share2 } from "lucide-react";
 import { Button } from "./ui/button";
 import { useLocation } from "react-router-dom";
 import { useToast } from "./ui/use-toast";
@@ -40,11 +40,11 @@ const ShareButton = () => {
   return (
     <Button
       variant="ghost"
-      size="icon"
       onClick={handleShare}
-      className="text-white hover:text-blue-700/80"
+      className="hover:text-blue-700/80 flex gap-2 items-center"
     >
-      <Share className="h-5 w-5" />
+      <Share2 className="h-5 w-5" />
+      Share
     </Button>
   );
 };

@@ -62,6 +62,24 @@ const Header = ({
         >
           {currentLanguage === "en" ? "PT" : "EN"}
         </Button>
+        <div className="hidden md:flex gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onAdvance}
+            className="text-white hover:text-blue-700/80"
+          >
+            <SkipForward className="h-5 w-5" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onReset}
+            className="text-white hover:text-blue-700/80"
+          >
+            <RefreshCw className="h-5 w-5" />
+          </Button>
+        </div>
       </div>
       <div className="flex gap-2">
         <Dialog>
@@ -85,7 +103,7 @@ const Header = ({
                 <p className="mt-2">
                   Visit our{" "}
                   <a
-                    href="https://github.com/yourusername/earth-defenders-assistant"
+                    href="https://github.com/digidem/earth-defenders-assistant"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-500 hover:underline"

@@ -4,7 +4,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu, RefreshCw, SkipForward } from "lucide-react";
+import { EllipsisVertical, RefreshCw, SkipForward } from "lucide-react";
 import { Button } from "./ui/button";
 import ShareButton from "./ShareButton";
 
@@ -25,7 +25,7 @@ const MobileMenu = ({
           size="icon"
           className="text-white hover:text-blue-700/80 md:hidden"
         >
-          <Menu className="h-5 w-5" />
+          <EllipsisVertical className="h-5 w-5" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

@@ -99,7 +99,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
                 <video
                   className="w-full h-full"
                   controls
-                >
+                  >
                   <source src={message.mediaUrl} type="video/mp4" />
                 </video>
               </div>
