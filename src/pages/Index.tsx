@@ -12,7 +12,7 @@ const Index = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   // Parse URL parameters
   const params = new URLSearchParams(location.search);
   const [language, setLanguage] = useState(params.get("lang") || "en");
@@ -48,7 +48,7 @@ const Index = () => {
     if (language === "pt") {
       return importedMessages || [];
     }
-    
+
     switch (story) {
       case "funding":
         return fundingMessages;

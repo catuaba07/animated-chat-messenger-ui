@@ -15,7 +15,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import MobileMenu from "./MobileMenu";
+import NavigationButtons from "./NavigationButtons";
 
 interface HeaderProps {
   currentStory: string;
@@ -44,12 +44,16 @@ const Header = ({
     <div className="bg-chat-bubble-received/30 p-4 flex justify-between items-center">
       <div className="flex gap-2">
         <Select value={currentStory} onValueChange={onStoryChange}>
-          <SelectTrigger className="w-[200px] bg-chat-bubble-received/60 border-none text-white">
+          <SelectTrigger className="w-[200px] bg-zinc-900/80 border border-zinc-800 text-zinc-100 hover:bg-zinc-800/90 transition-colors rounded-lg shadow-lg">
             <SelectValue placeholder="Select story" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className="bg-zinc-900 border border-zinc-800">
             {Object.entries(stories).map(([key, value]) => (
-              <SelectItem key={key} value={key}>
+              <SelectItem
+                key={key}
+                value={key}
+                className="text-zinc-100 hover:bg-zinc-800 cursor-pointer transition-colors"
+              >
                 {value}
               </SelectItem>
             ))}
@@ -62,23 +66,8 @@ const Header = ({
         >
           {currentLanguage === "en" ? "PT" : "EN"}
         </Button>
-        <div className="hidden md:flex gap-2">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onAdvance}
-            className="text-white hover:text-blue-700/80"
-          >
-            <SkipForward className="h-5 w-5" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onReset}
-            className="text-white hover:text-blue-700/80"
-          >
-            <RefreshCw className="h-5 w-5" />
-          </Button>
+        <div className="hidden md:flex">
+          <NavigationButtons onReset={onReset} onAdvance={onAdvance} />
         </div>
       </div>
       <div className="flex gap-2">
@@ -116,10 +105,9 @@ const Header = ({
             </DialogHeader>
           </DialogContent>
         </Dialog>
-        <MobileMenu
-          onReset={onReset}
-          onAdvance={onAdvance}
-        />
+        <div className="md:hidden">
+          <NavigationButtons onReset={onReset} onAdvance={onAdvance} />
+        </div>
       </div>
     </div>
   );

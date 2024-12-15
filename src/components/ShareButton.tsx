@@ -9,7 +9,7 @@ const ShareButton = () => {
 
   const handleShare = async () => {
     const url = window.location.origin + location.pathname + location.search;
-    
+
     if (navigator.share) {
       try {
         await navigator.share({
