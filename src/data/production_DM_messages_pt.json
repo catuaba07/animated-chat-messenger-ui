@@ -1,0 +1,32 @@
+[
+  {
+    "sender": "Dona Fatima (Bot)",
+    "text": "Bom dia Carulinda! Como está? Já anotou a sua produção de hoje?",
+    "timestamp": "02:00 PM",
+    "isSentByMe": false
+  },
+  {
+    "sender": "Carulinda",
+    "text": "Uuuuu ainda não, vou fazer isso mais tarde.",
+    "timestamp": "02:05 PM",
+    "isSentByMe": false
+  },
+  {
+    "sender": "Dona Fatima (Bot)",
+    "text": "Ahhh tudo bem, quer que eu te lembre novamente?",
+    "timestamp": "02:07 PM",
+    "isSentByMe": false
+  },
+  {
+    "sender": "Carulinda",
+    "text": "Ahh não precisa, pode deixar que eu lembro disso",
+    "timestamp": "02:08 PM",
+    "isSentByMe": false
+  },
+  {
+    "sender": "Dona Fatima (Bot)",
+    "text": "Ok, tenha um bom dia!",
+    "timestamp": "02:09 PM",
+    "isSentByMe": false
+  }
+]
