@@ -1,9 +1,12 @@
 [
   {
     "sender": "Dona Fatima (Bot)",
-    "text": "Bom dia Carulinda! Como está? Já anotou a sua produção de hoje?",
+    "text": "Anotaste?",
     "timestamp": "02:00 PM",
-    "isSentByMe": false
+    "isSentByMe": false,
+    "mediaType": "image",
+    "mediaUrl": "https://img.freepik.com/vetores-gratis/mulher-escrevendo-e-lendo-licao-ilustracao-isolada_18591-83936.jpg?t=st=1741729651~exp=1741733251~hmac=23315000e083fb70f1b1339bbbaec1223884d3d3504bab188bf38685b334f58a&w=740",
+    "mediaTitle": "Anotaste"
   },
   {
     "sender": "Carulinda",
@@ -26,7 +29,7 @@
   {
     "sender": "Dona Fatima (Bot)",
     "text": "Ok, tenha um bom dia!",
-    "timestamp": "02:09 PM",
+    "timestamp": "02:07 PM",
     "isSentByMe": false
   }
 ]

@@ -9,7 +9,7 @@ export interface Message {
   text: string;
   timestamp: string;
   isSentByMe: boolean;
-  mediaType?: "video" | "document" | "button";
+  mediaType?: "video" | "document" | "button" | "image";
   mediaUrl?: string;
   mediaTitle?: string;
   mediaSize?: string;
@@ -54,6 +54,16 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
               <div className="text-sm font-medium">{message.mediaTitle}</div>
               <div className="text-xs text-gray-500">{message.mediaSize}</div>
             </div>
+          </div>
+        );
+      case "image":
+        return (
+          <div className="mt-2 rounded-lg overflow-hidden relative group">
+            <img
+              src={message.mediaUrl}
+              alt={message.mediaTitle}
+              className="w-full h-full object-cover rounded-lg cursor-pointer"
+            />
           </div>
         );
       case "video":
