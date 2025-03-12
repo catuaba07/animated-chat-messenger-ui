@@ -7,6 +7,7 @@ import supportMessagesPt from "@/data/support_messages_pt.json";
 import productionMessages from "@/data/production_messages.json";
 import productionMessagesPt from "@/data/production_messages_pt.json";
 import productionDMMessagesPt from "@/data/production_DM_messages_pt.json";
+import productionDMMessages from "@/data/production_DM_messages.json";
 import ChatContainer from "@/components/ChatContainer";
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -51,6 +52,8 @@ const Index = () => {
         return supportMessages;
       case "production":
         return productionMessages;
+      case "production_DM":
+        return productionDMMessages;
       default:
         return fundingMessages;
     }

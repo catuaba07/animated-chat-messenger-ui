@@ -63,6 +63,9 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
               src={message.mediaUrl}
               alt={message.mediaTitle}
               className="w-full h-full object-cover rounded-lg cursor-pointer"
+              onError={() => {
+                console.log("Image failed to load");
+              }}
             />
           </div>
         );
@@ -72,7 +75,11 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
             <audio
               src={message.mediaUrl}
               controls
+              preload="metadata"
               className="w-full h-full object-cover rounded-lg cursor-pointer"
+              onError={() => {
+                console.log("Audio failed to load");
+              }}
             />
           </div>
         );
@@ -89,6 +96,9 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
               <video
                 className="w-full h-full object-cover rounded-lg"
                 preload="metadata"
+                onError={() => {
+                  console.log("Video failed to load");
+                }}
               >
                 <source src={message.mediaUrl} type="video/mp4" />
                 Your browser does not support the video tag.
