@@ -30,6 +30,14 @@
     "isSentByMe": false
   },
   {
+    "sender": "Raimunda",
+    "text": "",
+    "timestamp": "09:20 AM",
+    "isSentByMe": false,
+    "mediaType": "audio",
+    "mediaUrl": "https://next.coolab.org/s/6GfkRaYxJ7nXZ49/download/2025-03-12_09-14-43.m4a"
+  },
+  {
     "sender": "Iara",
     "text": "@Dona_Fatima, quanto a gente produziu até agora?",
     "timestamp": "09:16 AM",
@@ -37,7 +45,7 @@
   },
   {
     "sender": "Dona Fatima (Bot)",
-    "text": "Olha gente, calculei até agora: 20 mal casados, 10 cocadas, 3 bolos de puba, 2 bolos de macaxeira, 7kg de macaxeira, 10kg de cacau",
+    "text": "Olha gente, calculei até agora: 20 mal casados, 10 cocadas, 3 bolos de puba, 2 bolos de macaxeira, 7kg de macaxeira, 10kg de cacau, 3 graviolas e 2kg de beterrabas",
     "timestamp": "09:17 AM",
     "isSentByMe": false
   }

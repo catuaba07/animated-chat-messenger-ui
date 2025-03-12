@@ -30,6 +30,14 @@
     "isSentByMe": false
   },
   {
+    "sender": "Raimunda",
+    "text": "",
+    "timestamp": "09:20 AM",
+    "isSentByMe": false,
+    "mediaType": "audio",
+    "mediaUrl": "https://next.coolab.org/s/6GfkRaYxJ7nXZ49/download/2025-03-12_09-14-43.m4a"
+  },
+  {
     "sender": "Iara",
     "text": "@Dona_Fatima, how much we produced today?",
     "timestamp": "09:16 AM",
@@ -37,7 +45,7 @@
   },
   {
     "sender": "Dona Fatima (Bot)",
-    "text": "Until now, I've calculated: 20 mal casados, 10 cocadas, 3 puba's cakes, 2 macaxeira's cakes, 7kg of macaxeira, 10kg of cocoa",
+    "text": "Until now, I've calculated: 20 mal casados, 10 cocadas, 3 puba's cakes, 2 macaxeira's cakes, 7kg of macaxeira, 10kg of cocoa, 3 soursop and 2kg of beets",
     "timestamp": "09:17 AM",
     "isSentByMe": false
   }

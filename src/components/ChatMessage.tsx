@@ -9,7 +9,7 @@ export interface Message {
   text: string;
   timestamp: string;
   isSentByMe: boolean;
-  mediaType?: "video" | "document" | "button" | "image";
+  mediaType?: "video" | "document" | "button" | "image" | "audio";
   mediaUrl?: string;
   mediaTitle?: string;
   mediaSize?: string;
@@ -62,6 +62,16 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, showSender }) => {
             <img
               src={message.mediaUrl}
               alt={message.mediaTitle}
+              className="w-full h-full object-cover rounded-lg cursor-pointer"
+            />
+          </div>
+        );
+      case "audio":
+        return (
+          <div className="mt-2 rounded-lg overflow-hidden relative group">
+            <audio
+              src={message.mediaUrl}
+              controls
               className="w-full h-full object-cover rounded-lg cursor-pointer"
             />
           </div>
