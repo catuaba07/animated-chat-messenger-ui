@@ -39,7 +39,7 @@ const Header = ({
     course: "Course Plugin",
     support: "Product Support Plugin",
     production: "Production Plugin",
-    production_DM: "Production DM Plugin",
+    production_DM: "Our Production Plugin",
   };
 
   return (
