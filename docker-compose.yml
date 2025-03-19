@@ -1,6 +1,6 @@
 services:
   ux-web:
-    container_name: ux-web
+    container_name: ${UX_APP}
     build:
       context: .
       dockerfile: Dockerfile
